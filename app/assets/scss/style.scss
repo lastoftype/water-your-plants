@@ -1,8 +1,13 @@
 @import "utils/reset";
 @import "utils/type";
 
+@import "buttons";
+@import "plants";
+@import "animation";
+
 body {
   background: #f9f9f9;
+  color: #222;
 }
 
 .main {
@@ -21,6 +26,9 @@ body {
   font-size: 3rem;
   line-height: 1;
   margin: 0;
+  @extend .animated;
+  @extend .tdZoomInBounce;
+  animation-delay: 1s;
 }
 
 .list {
@@ -28,77 +36,4 @@ body {
   padding: 3rem;
   float: left;
   width: 100%;
-}
-
-.plant {
-  background-color: white;
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
-  padding: 2rem;
-  float: left;
-  margin: 0 0 2rem 2rem;
-
-  h3 {
-    font-size: 1.7em;
-    line-height: 1.2;
-    font-weight: bold;
-    padding: 0 2rem 0 0;
-    margin: 0 0 0.3em;
-  }
-
-}
-
-.label {
-  font-weight: bold;
-}
-
-.value {
-  .status-danger & {
-    color: red;
-  }
-  .status-success & {
-    color: green;
-  }
-  .status-warning & {
-    color: orange;
-  }
-}
-
-.close {
-  display: block;
-  margin: 1rem 1rem 0 0;
-  padding: 1rem;
-  top: 0;
-  right: 0;
-  position: absolute;
-  font-size: 1.8em;
-  font-weight: bold;
-  text-decoration: none;
-  color: inherit;
-  opacity: 0.4;
-  line-height: 1;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.button {
-  display: block;
-  width: 100%;
-  margin: 15px 0;
-  font-size: 1rem;
-  padding: 10px 16px;
-  background: #eee;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-
-  &:hover {
-    background: #ddd;
-    cursor: pointer;
-  }
 }

@@ -1,0 +1,46 @@
+
+.plant {
+  background-color: white;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+  padding: 2rem;
+  float: left;
+  margin: 0 0 2rem 2rem;
+  @extend .animated;
+  @extend .tdZoomIn;
+
+  h3 {
+    font-size: 1.7em;
+    line-height: 1.2;
+    font-weight: bold;
+    padding: 0 2rem 0 0;
+    margin: 0 0 0.3em;
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 100ms;
+    }
+  }
+
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  .status-danger & {
+    color: red;
+  }
+  .status-success & {
+    color: green;
+  }
+  .status-warning & {
+    color: orange;
+  }
+}
